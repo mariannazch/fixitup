@@ -9,6 +9,11 @@ import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import java.awt.Color;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.awt.event.ActionEvent;
+import com.database.Database_Connector;
 
 public class Sign_Up {
 
