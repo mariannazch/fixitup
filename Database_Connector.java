@@ -6,8 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement; 
 
 public class Database_Connector {
-	public static void main(String args[]) throws 
-   ClassNotFoundException { 
+	public static void main(String args[]) throws ClassNotFoundException { 
 		String driver = "com.mysql.jdbc.Driver";
 		String dbURL = "jdbc:mysql://esocial.gr/fixitup"; 
 		String username ="fixitup"; 
