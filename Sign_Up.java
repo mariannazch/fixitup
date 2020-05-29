@@ -55,6 +55,25 @@ public class Sign_Up {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JButton btnLogin = new JButton("Login");
+		btnLogin.AddActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String stdname = textField.getText();
+				String password = textField_1.getText();
+				
+				//hjgfs
+				Database_Connector.connector();
+				
+				if (stdname.equals("name") && password.equals("pass")) {
+					System.out.printIn("Welcome"); 
+				} 
+				else {
+					System.out.printIn("Your username or password are invalid.");
+				}
+		});
+		btn.Login.setBounds(358, 344, 89, 23);
+		frame.getContentPane().add(btnLogin);
+			
 		JLabel lblEmail = new JLabel("Email:");
 		lblEmail.setForeground(new Color(178, 34, 34));
 		lblEmail.setBounds(284, 210, 50, 29);
