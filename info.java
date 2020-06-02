@@ -3,7 +3,6 @@ package com.fixitup.MainApp;
  * 
  */
 /**
- * @author iason
  *
  */
 module FixitUp {
