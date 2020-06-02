@@ -11,4 +11,4 @@ public class Panel_RoughCut extends JPanel {
 		setBounds(186,11,662,546);
 	}
 
-}
+
