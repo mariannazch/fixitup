@@ -22,7 +22,6 @@ public class Main_Menu {
 	private Panel_ConsumerReq panel_consumerreq;
 	private Panel_Downloadfiles panel_downloadfiles;
 	private Panel_FinalDelivery panel_finaldelivery;
-	private Panel_Logout panel_logout;
 	private Panel_Newproject panel_newproject;
 	private Panel_NewStaff panel_newstaff;
 	private Panel_RoughCut panel_roughcut;
@@ -55,7 +54,7 @@ public class Main_Menu {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame(); 
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 874, 607);
@@ -69,7 +68,7 @@ public class Main_Menu {
 		panel_consumerreq = new Panel_ConsumerReq();
 		panel_downloadfiles = new Panel_Downloadfiles();
 		panel_finaldelivery = new Panel_FinalDelivery();
-		panel_logout =  new Panel_Logout();
+		
 		panel_newproject = new Panel_Newproject();
 		panel_newstaff = new Panel_NewStaff();
 		panel_roughcut = new Panel_RoughCut();
@@ -86,7 +85,7 @@ public class Main_Menu {
 		panel_maincontent.add(panel_consumerreq);
 		panel_maincontent.add(panel_downloadfiles);
 		panel_maincontent.add(panel_finaldelivery);
-		panel_maincontent.add(panel_logout);
+		
 		panel_maincontent.add(panel_newproject);
 		panel_maincontent.add(panel_newstaff);
 		panel_maincontent.add(panel_roughcut);
@@ -137,7 +136,11 @@ public class Main_Menu {
 		newproject.add(lblNewLabel_1);
 		
 		JPanel backitup = new JPanel();
-		backitup.addMouseListener(new PanelButtonMouseAdapter(backitup));
+		backitup.addMouseListener(new PanelButtonMouseAdapter(backitup){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menuClicked(panel_backitup);}
+			});
 		backitup.setBackground(new Color(255, 51, 51));
 		backitup.setBounds(10, 89, 156, 28);
 		redframe.add(backitup);
@@ -147,7 +150,11 @@ public class Main_Menu {
 		backitup.add(lblNewLabel_2);
 		
 		JPanel uploadfiles = new JPanel();
-		uploadfiles.addMouseListener(new PanelButtonMouseAdapter(uploadfiles));
+		uploadfiles.addMouseListener(new PanelButtonMouseAdapter(uploadfiles){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menuClicked(panel_uploadfiles);}
+		});
 		uploadfiles.setBackground(new Color(255, 51, 51));
 		uploadfiles.setBounds(10, 128, 156, 28);
 		redframe.add(uploadfiles);
@@ -158,7 +165,11 @@ public class Main_Menu {
 		uploadfiles.add(lblNewLabel_3);
 		
 		JPanel downloadfiles = new JPanel();
-		downloadfiles.addMouseListener(new PanelButtonMouseAdapter(downloadfiles));
+		downloadfiles.addMouseListener(new PanelButtonMouseAdapter(downloadfiles){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menuClicked(panel_downloadfiles);}
+		});
 		downloadfiles.setBackground(new Color(255, 51, 51));
 		downloadfiles.setBounds(10, 167, 156, 28);
 		redframe.add(downloadfiles);
@@ -169,7 +180,11 @@ public class Main_Menu {
 		downloadfiles.add(lblNewLabel_4);
 		
 		JPanel roughcut = new JPanel();
-		roughcut.addMouseListener(new PanelButtonMouseAdapter(roughcut));
+		roughcut.addMouseListener(new PanelButtonMouseAdapter(roughcut){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menuClicked(panel_roughcut);}
+		});
 		roughcut.setBackground(new Color(255, 51, 51));
 		roughcut.setBounds(10, 206, 156, 28);
 		redframe.add(roughcut);
@@ -180,7 +195,11 @@ public class Main_Menu {
 		roughcut.add(lblNewLabel_5);
 		
 		JPanel sendmessage = new JPanel();
-		sendmessage.addMouseListener(new PanelButtonMouseAdapter(sendmessage));
+		sendmessage.addMouseListener(new PanelButtonMouseAdapter(sendmessage){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menuClicked(panel_sendmessage);}
+		});
 		sendmessage.setBackground(new Color(255, 51, 51));
 		sendmessage.setBounds(10, 245, 156, 28);
 		redframe.add(sendmessage);
@@ -191,7 +210,11 @@ public class Main_Menu {
 		sendmessage.add(lblNewLabel_6);
 		
 		JPanel newstaff = new JPanel();
-		newstaff.addMouseListener(new PanelButtonMouseAdapter(newstaff));
+		newstaff.addMouseListener(new PanelButtonMouseAdapter(newstaff){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menuClicked(panel_newstaff);}
+		});
 		newstaff.setBackground(new Color(255, 51, 51));
 		newstaff.setBounds(10, 284, 156, 28);
 		redframe.add(newstaff);
@@ -202,7 +225,11 @@ public class Main_Menu {
 		newstaff.add(lblNewLabel_7);
 		
 		JPanel consumer_req = new JPanel();
-		consumer_req.addMouseListener(new PanelButtonMouseAdapter(consumer_req));
+		consumer_req.addMouseListener(new PanelButtonMouseAdapter(consumer_req){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menuClicked(panel_consumerreq);}
+		});
 		consumer_req.setBackground(new Color(255, 51, 51));
 		consumer_req.setBounds(10, 323, 156, 28);
 		redframe.add(consumer_req);
@@ -213,7 +240,11 @@ public class Main_Menu {
 		consumer_req.add(lblNewLabel_8);
 		
 		JPanel finaldelivery = new JPanel();
-		finaldelivery.addMouseListener(new PanelButtonMouseAdapter(finaldelivery));
+		finaldelivery.addMouseListener(new PanelButtonMouseAdapter(finaldelivery){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menuClicked(panel_finaldelivery);}
+		});
 		finaldelivery.setBackground(new Color(255, 51, 51));
 		finaldelivery.setBounds(10, 362, 156, 28);
 		redframe.add(finaldelivery);
@@ -224,7 +255,13 @@ public class Main_Menu {
 		finaldelivery.add(lblNewLabel_9);
 		
 		JPanel logout = new JPanel();
-		logout.addMouseListener(new PanelButtonMouseAdapter(logout));
+		logout.addMouseListener(new PanelButtonMouseAdapter(logout){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+				Sign_Up window = new Sign_Up();
+				window.frame.setVisible(true); ;}
+		});
 		logout.setForeground(new Color(0, 0, 0));
 		logout.setBackground(new Color(255, 51, 51));
 		logout.setBounds(10, 514, 156, 28);
@@ -253,8 +290,7 @@ public class Main_Menu {
 		panel_backitup.setVisible(false);
 		panel_consumerreq.setVisible(false);
 		panel_downloadfiles.setVisible(false);
-		panel_finaldelivery.setVisible(false);
-		panel_logout.setVisible(false);  
+		panel_finaldelivery.setVisible(false); 
 		panel_newproject.setVisible(false);
 		panel_newstaff.setVisible(false); 
 		panel_roughcut.setVisible(false);
@@ -295,7 +331,4 @@ public class Main_Menu {
 			});
 	}}
 }
-
-	
-
 
