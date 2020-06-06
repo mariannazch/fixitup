@@ -10,4 +10,4 @@ public class Panel_Downloadfiles extends JPanel {
 	public Panel_Downloadfiles() {
 		setBounds(186,11,662,546);
 	}
-
+}
